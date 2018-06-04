@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ title }} - Microblog</title>
-</head>
+{% extends "base.html" %}
+
+{% block content %}
 <body>
     <h1>Привет, {{ user.username }}!</h1>
     {% for post in posts %}
     <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
     {% endfor %}
-</body>
-</html>
+{% endblock %}
