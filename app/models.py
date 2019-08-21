@@ -67,6 +67,10 @@ class User(UserMixin, db.Model):
         # вернуть результат объединения запросов
         return followed.union(own).order_by(Post.timestamp.desc())
 
+    def own_posts(self):
+        own = Post.query.filter_by(user_id=self.id)
+        return own.order_by(Post.timestamp.desc())
+
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.String(140))
