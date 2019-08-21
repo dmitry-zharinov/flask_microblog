@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>User list</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>Username</td>
+                <td>Last Seen</td>
+                <td>Followers</td>
+                <td>Followed</td>
+            </tr>
+        </thead>
+    {% for user in user_list %}
+    <tr>
+        <td><a href="{{ url_for('user', username=user.username) }}"></a> {{ user.username }}</td>
+        <td>{{ user.last_seen }}</td>
+        <td>{{ user.followers.count() }}</td>
+        <td>{{ user.followed.count() }}</td>
+    </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

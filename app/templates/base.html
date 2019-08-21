@@ -14,6 +14,7 @@
             </br>Register: <a href="{{ url_for('register') }}">Register</a>
         {% else %}
             </br>My Profile: <a href="{{ url_for('user', username=current_user.username) }}">My Profile</a>
+            </br>User List: <a href="{{ url_for('user_list') }}">User List</a>
             </br>Logout: <a href="{{ url_for('logout') }}">Logout</a>
         {% endif %}
         </div>
