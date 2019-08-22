@@ -124,3 +124,9 @@ def user_list():
     user_list = User.query.all()
     user_count = User.query.count()
     return render_template('user_list.html', title='User List', user_list=user_list, user_count=user_count)
+
+@flask_app.route('/explore')
+@login_required
+def explore():
+    posts = Post.query.order_by(Post.timestamp.desc()).all()
+    return render_template('index.html', title='Explore', posts=posts)

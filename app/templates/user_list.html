@@ -13,7 +13,7 @@
         </thead>
     {% for user in user_list %}
     <tr>
-        <td><a href="{{ url_for('user', username=user.username) }}"></a> {{ user.username }}</td>
+        <td><a href="{{ url_for('user', username=user.username) }}">{{ user.username }}</a></td>
         <td>{{ user.last_seen }}</td>
         <td>{{ user.followers.count() }}</td>
         <td>{{ user.followed.count() }}</td>
