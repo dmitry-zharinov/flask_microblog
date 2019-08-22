@@ -8,3 +8,4 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     AVATAR_TYPE = 'local'
     AVATAR_SIZE = 128
+    POSTS_PER_PAGE = 5

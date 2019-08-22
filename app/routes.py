@@ -19,8 +19,13 @@ def index():
         db.session.commit()
         flash('New post was successfully added!')
         return redirect(url_for('index'))
-    posts = current_user.followed_posts().all()
-    return render_template('index.html', title=title, form=form, posts=posts)
+    page = request.args.get('page', 1, type=int)
+    posts = current_user.followed_posts().paginate(page, flask_app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('index', page=posts.next_num) \
+        if posts.has_next else None
+    prev_url = url_for('index', page=posts.prev_num) \
+        if posts.has_prev else None
+    return render_template('index.html', title=title, form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
 
 
 @flask_app.route('/login', methods=['GET', 'POST'])
@@ -64,8 +69,13 @@ def register():
 @login_required
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
-    posts = user.own_posts().all()
-    return render_template('user.html', user=user, posts=posts, avatar_size=Config.AVATAR_SIZE)
+    page = request.args.get('page', 1, type=int)
+    posts = user.own_posts().paginate(page, flask_app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('user', page=posts.next_num, username=username) \
+        if posts.has_next else None
+    prev_url = url_for('user', page=posts.prev_num, username=username) \
+        if posts.has_prev else None
+    return render_template('user.html', user=user, posts=posts.items, avatar_size=Config.AVATAR_SIZE, prev_url=prev_url, next_url=next_url)
 
 @flask_app.before_request
 def before_request():
@@ -128,5 +138,10 @@ def user_list():
 @flask_app.route('/explore')
 @login_required
 def explore():
-    posts = Post.query.order_by(Post.timestamp.desc()).all()
-    return render_template('index.html', title='Explore', posts=posts)
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.order_by(Post.timestamp.desc()).paginate(page, flask_app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('explore', page=posts.next_num) \
+        if posts.has_next else None
+    prev_url = url_for('explore', page=posts.prev_num) \
+        if posts.has_prev else None
+    return render_template('index.html', title='Explore', posts=posts.items, next_url=next_url, prev_url=prev_url)
