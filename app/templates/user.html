@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block content %}
+{% block app_content %}
     <table>
         <tr valign="top">
             <td><img src="{{ user.avatar(avatar_size) }}"></td>
@@ -28,3 +28,4 @@
     {% if next_url %}<a href="{{ next_url }}">>> Next</a>{% endif %}
 {% endblock %}
 
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>

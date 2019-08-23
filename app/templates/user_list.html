@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block app_content %}
     <h1>User list</h1>
     <table>
         <thead>
@@ -21,3 +21,5 @@
     {% endfor %}
     </table>
 {% endblock %}
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
