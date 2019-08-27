@@ -1,0 +1,154 @@
+# Russian translations for PROJECT.
+# Copyright (C) 2019 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2019-08-27 14:02+0300\n"
+"PO-Revision-Date: 2019-08-27 13:16+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: app/__init__.py:21
+msgid "Please log in to access this page."
+msgstr "Пожалуйста, войдите, чтобы получить доступ к этой странице"
+
+#: app/forms.py:8 app/forms.py:14 app/forms.py:31
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: app/forms.py:9 app/forms.py:16 app/forms.py:54
+msgid "Password"
+msgstr "Пароль"
+
+#: app/forms.py:10
+msgid "Remember Me"
+msgstr "Запомнить меня"
+
+#: app/forms.py:11
+msgid "Sign In"
+msgstr "Войти"
+
+#: app/forms.py:15 app/forms.py:50
+msgid "Email"
+msgstr "Электронная почта"
+
+#: app/forms.py:17 app/forms.py:56
+msgid "Repeat Password"
+msgstr "Повторите пароль"
+
+#: app/forms.py:18
+msgid "Register"
+msgstr "Регистрация"
+
+#: app/forms.py:32
+msgid "About Me"
+msgstr "О себе"
+
+#: app/forms.py:33 app/forms.py:47
+msgid "Submit"
+msgstr "Отправить"
+
+#: app/forms.py:43
+msgid "Please use a different username."
+msgstr "Пожалуйста, используйте другое имя пользователя"
+
+#: app/forms.py:46
+msgid "Say something"
+msgstr "Напишите что-нибудь"
+
+#: app/forms.py:51 app/forms.py:57
+msgid "Request Password Reset"
+msgstr "Запрос сброса пароля"
+
+#: app/routes.py:16
+msgid "Home Page"
+msgstr "Домашняя страница"
+
+#: app/routes.py:22
+msgid "New post was successfully added!"
+msgstr "Новое сообщение было успешно добавлено!"
+
+#: app/routes.py:41
+msgid "Invalid username or password"
+msgstr "Неверное имя пользователя или пароль"
+
+#: app/routes.py:65
+msgid "Congratulations, you are now a registered user!"
+msgstr "Поздравляем, теперь вы зарегистрированный пользователь!"
+
+#: app/routes.py:96
+msgid "Your changes have been saved"
+msgstr "Изменения были сохранены"
+
+#: app/routes.py:176
+msgid "Your password has been reset."
+msgstr "Ваш пароль был сброшен."
+
+#: app/templates/404.html:5
+msgid "File Not Found"
+msgstr "Файл не найден"
+
+#: app/templates/500.html:4
+msgid "An unexpected error has occurred"
+msgstr "Произошла непредвиденная ошибка"
+
+#: app/templates/500.html:5
+msgid "The administrator has been notified. Sorry for the inconvenience!"
+msgstr "Администратор уведомлен. Приносим извинения за неудобства!"
+
+#: app/templates/_post.html:14
+#, python-format
+msgid "%(username)s said %(when)s"
+msgstr "%(username)s написал(-а) %(when)s"
+
+#: app/templates/base.html:9
+msgid "Microblog"
+msgstr "МикроБлог"
+
+#: app/templates/base.html:16
+msgid "Home"
+msgstr "Домой"
+
+#: app/templates/base.html:19
+msgid "Explore"
+msgstr "Обзор"
+
+#: app/templates/base.html:21
+msgid "Users"
+msgstr "Пользователи"
+
+#: app/templates/base.html:23
+msgid "Login"
+msgstr "Вход"
+
+#: app/templates/base.html:25
+msgid "Profile"
+msgstr "Мой профиль"
+
+#: app/templates/base.html:26
+msgid "Logout"
+msgstr "Выход"
+
+#: app/templates/index.html:4
+msgid "Hi"
+msgstr "Привет"
+
+#: app/templates/index.html:16
+msgid "Newer posts"
+msgstr "Позднее"
+
+#: app/templates/index.html:21
+msgid "Older posts"
+msgstr "Ранее"
+

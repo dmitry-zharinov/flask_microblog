@@ -16,3 +16,4 @@ class Config(object):
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['zharinovdm@ya.ru']
     BOOTSTRAP_SERVE_LOCAL = True
+    LANGUAGES = ['en', 'ru']

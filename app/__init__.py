@@ -1,10 +1,11 @@
-from flask import Flask
+from flask import Flask, request
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_mail import Mail
 from flask_moment import Moment
+from flask_babel import Babel, lazy_gettext as _l
 from flask_bootstrap import Bootstrap
 from logging.handlers import RotatingFileHandler
 import logging
@@ -17,8 +18,10 @@ migrate = Migrate(flask_app, db)
 moment = Moment(flask_app)
 login = LoginManager(flask_app)
 login.login_view = 'login'
+login.login_message = _l('Please log in to access this page.')
 mail = Mail(flask_app)
 bootstrap = Bootstrap(flask_app)
+babel = Babel(flask_app)
 
 if not flask_app.debug:
     if not os.path.exists('logs'):
@@ -34,3 +37,7 @@ if not flask_app.debug:
     flask_app.logger.info('Microblog startup')
 
 from app import routes, models, errors
+
+@babel.localeselector
+def get_locale():
+    return request.accept_languages.best_match(flask_app.config['LANGUAGES'])
